@@ -21,6 +21,13 @@ generate_inc_file_for_target(
     )
 
 target_sources(app PRIVATE
-	src/app.c
-    src/http_app.c
+	src/main.c
+	src/wifi/wifi_sta.c
+	src/wifi/http_app.c
+	# Future sensor and BLE files will be added here
+	# src/sensors/sensor_fsm.c
+	# src/sensors/sensor_data.c
+	# src/ble/ble_service.c
+	# src/ble/ble_advertising.c
+	# src/common/data_manager.c
 )
