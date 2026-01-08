@@ -1,0 +1,65 @@
+
+/ {
+	chosen {
+		zephyr,wifi = &wlan0;
+	};
+};
+
+// &qspi {
+// 	status = "okay";
+// 	nrf70: nrf7002@0 {
+// 		compatible = "nordic,nrf7002-qspi";
+// 		status = "okay";
+// 		reg = <0>;
+// 		qspi-frequency = <24000000>;
+// 		qspi-quad-mode;
+
+//         /* Control signals - adjust pins as per wiring */
+//         // iovdd-ctrl-gpios = <&gpio0 5 GPIO_ACTIVE_HIGH>;
+//         // bucken-gpios     = <&gpio0 6 GPIO_ACTIVE_HIGH>;
+//         // host-irq-gpios   = <&gpio0 11 GPIO_ACTIVE_HIGH>;
+
+//         iovdd-power-up-delay-ms = <1>;
+//         #include "nrf70_common.dtsi"
+// 		#include "nrf70_common_5g.dtsi"
+        
+       
+
+//     };
+// };
+
+
+&spi1 {
+    compatible = "nordic,nrf-spi";
+    status = "okay";
+    pinctrl-0 = <&spi0_default>;
+
+    /* Chip select pin */
+    cs-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+    nrf70: nrf7002@0 {
+        compatible = "nordic,nrf7002-spi";
+        reg = <0>;                    /* CS index */
+        spi-max-frequency = <24000000>; /* 8 MHz */
+        status = "okay";
+
+        iovdd-ctrl-gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+        bucken-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+        host-irq-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+        srrf-switch-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+
+        iovdd-power-up-delay-ms = <1>;
+
+        #include "nrf70_common.dtsi"
+        #include "nrf70_common_5g.dtsi"
+    };
+};
+
+// wlan0: wlan {
+// 	compatible = "nordic,wlan";
+// };
+
+&usbd {
+	status = "disabled";
+};
+
+

@@ -1,0 +1,7 @@
+default: sta
+build_dir: D:/nrf-connect-ws/hr/sta/nrf52dk
+domains:
+  - name: sta
+    build_dir: D:/nrf-connect-ws/hr/sta/nrf52dk/sta
+flash_order:
+  - sta

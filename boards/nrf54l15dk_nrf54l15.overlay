@@ -1,0 +1,58 @@
+/ {
+	chosen {
+		zephyr,wifi = &wlan0;
+	};
+};
+
+&pinctrl{
+spi22_default: spi22_default {
+		group1 {
+			psels = <NRF_PSEL(SPIM_SCK, 2, 1)>,
+				<NRF_PSEL(SPIM_MOSI, 2, 2)>,
+				<NRF_PSEL(SPIM_MISO, 2, 4)>;
+		};
+	};
+};
+
+&wifi_spi {
+	status = "okay";
+	pinctrl-0 = <&spi22_default>;
+	pinctrl-names= "default";
+    nrf70: nrf7002@0 {
+        compatible = "nordic,nrf7002-spi";
+        reg = <0>;                    /* CS index */
+        spi-max-frequency = <24000000>; /* 8 MHz */
+        status = "okay";
+
+        iovdd-ctrl-gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+        bucken-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+        host-irq-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+        srrf-switch-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+
+        iovdd-power-up-delay-ms = <1>;
+
+        #include "nrf70_common.dtsi"
+        #include "nrf70_common_5g.dtsi"
+    };
+};
+
+// &wifi_spi{
+//     /* Chip select pin */
+//     cs-gpios = <&gpio0 2 GPIO_ACTIVE_LOW>;
+//     nrf70: nrf7002@0 {
+//         compatible = "nordic,nrf7002-spi";
+//         reg = <0>;                    /* CS index */
+//         spi-max-frequency = <24000000>; /* 8 MHz */
+//         status = "okay";
+
+//         iovdd-ctrl-gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+//         bucken-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+//         host-irq-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+//         srrf-switch-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+
+//         iovdd-power-up-delay-ms = <1>;
+
+//         #include "nrf70_common.dtsi"
+//         #include "nrf70_common_5g.dtsi"
+//     };
+// };

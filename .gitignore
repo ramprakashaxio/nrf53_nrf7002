@@ -1,0 +1,32 @@
+# Build directories
+build/
+*.ninja_log
+
+# IDE and editor files
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Generated files
+compile_commands.json
+*.elf
+*.hex
+*.bin
+*.map
+
+# Certificates (exclude generated files)
+cert/*.inc
+
+# Temporary files
+*.tmp
+*.bak

@@ -1,0 +1,13 @@
+# Target labels
+ sta
+# Source files and their labels
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/CMakeFiles/sta
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/CMakeFiles/sta.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/CMakeFiles/sta-complete.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-build.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-configure.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-download.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-install.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-mkdir.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-patch.rule
+D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-update.rule

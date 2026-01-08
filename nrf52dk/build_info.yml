@@ -1,0 +1,25 @@
+cmake:
+  application:
+    source-dir: 'C:/nrf/v3.1.0/zephyr/share/sysbuild'
+  board:
+    name: 'nrf52840dk'
+    path:
+     - 'C:/nrf/v3.1.0/zephyr/boards/nordic/nrf52840dk'
+    qualifiers: 'nrf52840'
+    revision: ''
+  images:
+   - name: 'sta'
+     source-dir: 'D:/nrf-connect-ws/hr/sta'
+     type: 'MAIN'
+  kconfig:
+    files:
+     - 'D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/empty.conf'
+     - 'd:/nrf-connect-ws/hr/sta/sysbuild.conf'
+    user-files:
+     - 'd:/nrf-connect-ws/hr/sta/sysbuild.conf'
+  sysbuild: 'true'
+version: '0.1.0'
+west:
+  command: 'C:\nrf\toolchains\b8b84efebd\opt\bin\Scripts\west build --build-dir d:/nrf-connect-ws/hr/sta/nrf52dk d:/nrf-connect-ws/hr/sta --pristine --board nrf52840dk/nrf52840 --sysbuild -- -DDTC_OVERLAY_FILE=boards/nrf52840dk_nrf52840.overlay'
+  topdir: 'c:\nrf\v3.1.0'
+  version: '1.4.0'

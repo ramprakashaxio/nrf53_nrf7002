@@ -1,0 +1,43 @@
+{
+	"sources" : 
+	[
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/CMakeFiles/sta"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/CMakeFiles/sta.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/CMakeFiles/sta-complete.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-build.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-configure.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-download.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-install.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-mkdir.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-patch.rule"
+		},
+		{
+			"file" : "D:/nrf-connect-ws/hr/sta/nrf52dk/_sysbuild/sysbuild/images/sta-prefix/src/sta-stamp/sta-update.rule"
+		}
+	],
+	"target" : 
+	{
+		"labels" : 
+		[
+			"sta"
+		],
+		"name" : "sta"
+	}
+}

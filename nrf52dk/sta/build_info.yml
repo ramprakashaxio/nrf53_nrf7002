@@ -1,0 +1,56 @@
+cmake:
+  application:
+    configuration-dir: 'D:/nrf-connect-ws/hr/sta'
+    source-dir: 'D:/nrf-connect-ws/hr/sta'
+  board:
+    name: 'nrf52840dk'
+    path:
+     - 'C:/nrf/v3.1.0/zephyr/boards/nordic/nrf52840dk'
+    qualifiers: 'nrf52840'
+    revision: ''
+  devicetree:
+    bindings-dirs:
+     - 'C:/nrf/v3.1.0/nrf/dts/bindings'
+     - 'C:/nrf/v3.1.0/zephyr/dts/bindings'
+    files:
+     - 'C:/nrf/v3.1.0/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840.dts'
+     - 'boards/nrf52840dk_nrf52840.overlay'
+    include-dirs:
+     - 'C:/nrf/v3.1.0/nrf/include'
+     - 'C:/nrf/v3.1.0/nrf/dts/common'
+     - 'C:/nrf/v3.1.0/nrf/dts/riscv'
+     - 'C:/nrf/v3.1.0/nrf/dts/arm'
+     - 'C:/nrf/v3.1.0/nrf/dts'
+     - 'C:/nrf/v3.1.0/zephyr/include'
+     - 'C:/nrf/v3.1.0/zephyr/include/zephyr'
+     - 'C:/nrf/v3.1.0/zephyr/dts/common'
+     - 'C:/nrf/v3.1.0/zephyr/dts/vendor'
+     - 'C:/nrf/v3.1.0/zephyr/dts/rx'
+     - 'C:/nrf/v3.1.0/zephyr/dts/x86'
+     - 'C:/nrf/v3.1.0/zephyr/dts/xtensa'
+     - 'C:/nrf/v3.1.0/zephyr/dts/sparc'
+     - 'C:/nrf/v3.1.0/zephyr/dts/riscv'
+     - 'C:/nrf/v3.1.0/zephyr/dts/posix'
+     - 'C:/nrf/v3.1.0/zephyr/dts/arm64'
+     - 'C:/nrf/v3.1.0/zephyr/dts/arm'
+     - 'C:/nrf/v3.1.0/zephyr/dts/arc'
+     - 'C:/nrf/v3.1.0/zephyr/dts'
+    user-files:
+     - 'boards/nrf52840dk_nrf52840.overlay'
+  kconfig:
+    files:
+     - 'C:/nrf/v3.1.0/zephyr/boards/nordic/nrf52840dk/nrf52840dk_nrf52840_defconfig'
+     - 'D:/nrf-connect-ws/hr/sta/prj.conf'
+     - 'D:/nrf-connect-ws/hr/sta/nrf52dk/sta/zephyr/.config.sysbuild'
+    user-files:
+     - 'D:/nrf-connect-ws/hr/sta/prj.conf'
+  toolchain:
+    name: 'zephyr'
+    path: 'C:/nrf/toolchains/b8b84efebd/opt/zephyr-sdk'
+  vendor-specific:
+    nordic:
+      svdfile: 'C:/nrf/v3.1.0/modules/hal/nordic/nrfx/mdk/nrf52840.svd'
+  zephyr:
+    version: '4.1.99'
+    zephyr-base: 'C:/nrf/v3.1.0/zephyr'
+version: '0.1.0'

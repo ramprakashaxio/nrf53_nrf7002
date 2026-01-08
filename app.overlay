@@ -1,0 +1,116 @@
+/{
+	chosen {
+		zephyr,wifi = &wlan0;
+	};
+
+	/delete-node/ aliases;
+	/delete-node/ buttons;
+	/delete-node/ leds;
+};
+
+
+&pinctrl {
+	uart0_default: uart0_default {
+		group1 {
+			psels = <NRF_PSEL(UART_TX, 0, 9)>,
+				<NRF_PSEL(UART_RTS, 0, 1)>;
+		};
+
+		group2 {
+			psels = <NRF_PSEL(UART_RX, 0, 8)>,
+				<NRF_PSEL(UART_CTS, 0, 0)>;
+			bias-pull-up;
+		};
+	};
+};
+
+
+&nrf_radio_coex{
+		status = "okay";
+		// compatible = "nordic,nrf7002-coex";
+		req-gpios = <&gpio0 22 GPIO_ACTIVE_HIGH>;
+		status0-gpios = <&gpio0 20 GPIO_ACTIVE_HIGH>;
+		grant-gpios = <&gpio1 4 (GPIO_PULL_DOWN | GPIO_ACTIVE_LOW)>;
+		// swctrl1-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+	};
+
+&qspi {
+	status = "okay";
+	nrf70: nrf7002@1 {
+		compatible = "nordic,nrf7002-qspi";
+		status = "okay";
+		reg = <1>;
+		qspi-frequency = <24000000>;
+		qspi-quad-mode;
+
+		// #include "nrf70_common.dtsi"
+		// #include "nrf70_common_5g.dtsi"
+		iovdd-power-up-delay-ms = <1>;
+
+		wifi-max-tx-pwr-5g-low-mcs0 = <9>;
+		wifi-max-tx-pwr-5g-low-mcs7 = <9>;
+		wifi-max-tx-pwr-5g-mid-mcs0 = <11>;
+		wifi-max-tx-pwr-5g-mid-mcs7 = <11>;
+		wifi-max-tx-pwr-5g-high-mcs0 = <13>;
+		wifi-max-tx-pwr-5g-high-mcs7 = <13>;
+
+		iovdd-ctrl-gpios = <&gpio0 19 GPIO_ACTIVE_HIGH>;
+		bucken-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;
+		host-irq-gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+		// srrf-switch-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+
+		wifi-max-tx-pwr-2g-dsss = <21>;
+		wifi-max-tx-pwr-2g-mcs0 = <16>;
+		wifi-max-tx-pwr-2g-mcs7 = <16>;
+
+		wlan0: wlan {
+			compatible = "nordic,wlan";
+		};
+	};
+};
+
+
+// &spi4 {
+//     compatible = "nordic,nrf-spim";
+//     status = "okay";
+//     pinctrl-0 = <&spi4_default>;
+// 	pinctrl-names = "default","sleep";
+// 	cs-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>;
+
+//     /* Chip select pin */
+   
+//     nrf70: nrf7002@1 {
+//         compatible = "nordic,nrf7002-spi";
+//         reg = <1>;                    /* CS index */
+//         spi-max-frequency = <24000000>; /* 8 MHz */
+//         status = "okay";
+
+//         // iovdd-ctrl-gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+//         // bucken-gpios = <&gpio1 1 GPIO_ACTIVE_HIGH>;
+//         // host-irq-gpios = <&gpio1 6 GPIO_ACTIVE_HIGH>;
+//         // srrf-switch-gpios = <&gpio1 10 GPIO_ACTIVE_HIGH>;
+
+//         iovdd-power-up-delay-ms = <1>;
+
+// 		wifi-max-tx-pwr-5g-low-mcs0 = <9>;
+// 		wifi-max-tx-pwr-5g-low-mcs7 = <9>;
+// 		wifi-max-tx-pwr-5g-mid-mcs0 = <11>;
+// 		wifi-max-tx-pwr-5g-mid-mcs7 = <11>;
+// 		wifi-max-tx-pwr-5g-high-mcs0 = <13>;
+// 		wifi-max-tx-pwr-5g-high-mcs7 = <13>;
+
+// 		iovdd-ctrl-gpios = <&gpio0 19 GPIO_ACTIVE_HIGH>;
+// 		bucken-gpios = <&gpio1 7 GPIO_ACTIVE_HIGH>;
+// 		host-irq-gpios = <&gpio1 5 GPIO_ACTIVE_HIGH>;
+// 		srrf-switch-gpios = <&gpio0 23 GPIO_ACTIVE_HIGH>;
+
+// 		wifi-max-tx-pwr-2g-dsss = <21>;
+// 		wifi-max-tx-pwr-2g-mcs0 = <16>;
+// 		wifi-max-tx-pwr-2g-mcs7 = <16>;
+
+// 		wlan0: wlan {
+// 			compatible = "nordic,wlan";
+// 		};
+
+// 	};
+// };
